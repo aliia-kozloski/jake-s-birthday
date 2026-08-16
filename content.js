@@ -12,6 +12,9 @@
    - See exactly what Jake sees on a day:     index.html?date=2026-08-26
    - Skip the opening crawl while testing:    index.html?nointro=1
      (you can combine them: index.html?preview=1&nointro=1)
+   - Share ONE day with family (e.g. the fleet): index.html?peek=6
+     Only that day is unlocked — everything else stays locked for them,
+     no matter the date. It opens automatically when they arrive.
    ========================================================================== */
 
 const SITE = {

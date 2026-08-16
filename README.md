@@ -48,6 +48,7 @@ Doors unlock by the viewer's local date, but you can test everything early:
 | `index.html?date=2026-08-27` | Pretends today is that date                   |
 | `index.html?nointro=1`       | Skips the opening crawl                       |
 | `index.html?preview=1&open=4` | Jumps straight into a given day's door       |
+| `index.html?peek=6`          | Family share link: ONLY that day (1–7) is unlocked — it opens on arrival, and every other day stays locked no matter the date |
 
 They combine: `index.html?preview=1&nointro=1`. The opening crawl plays once
 per browser session; there's a "Replay opening crawl" button in the footer.

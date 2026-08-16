@@ -32,7 +32,11 @@
   const realStart = Date.now();
   const now = () => (simStart ? new Date(simStart.getTime() + (Date.now() - realStart)) : new Date());
   const previewAll = ['1', 'all', 'true'].includes((params.get('preview') || '').toLowerCase());
-  const noIntro = params.has('nointro');
+  // ?peek=N — share link for ONE day: only that day is unlocked (regardless of
+  // date or preview), the crawl is skipped, and its door opens automatically.
+  const peekRaw = parseInt(params.get('peek') || '', 10);
+  const peekIdx = Number.isInteger(peekRaw) && peekRaw >= 1 && peekRaw <= DAYS.length ? peekRaw - 1 : null;
+  const noIntro = params.has('nointro') || peekIdx !== null;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
@@ -348,11 +352,13 @@
   /* ==========================================================================
      DOORS
      ========================================================================== */
-  function dayState(day) {
+  function dayState(day, i) {
     const unlockAt = parseLocal(day.date);
+    if (i === undefined) i = DAYS.indexOf(day);
     return {
       unlockAt,
-      unlocked: previewAll || now() >= unlockAt,
+      // in peek mode ONLY the peeked day is open — nothing else, ever
+      unlocked: peekIdx !== null ? i === peekIdx : (previewAll || now() >= unlockAt),
       isToday: sameDay(now(), unlockAt),
       viewed: store.opened.includes(day.date)
     };
@@ -361,7 +367,7 @@
   function renderDoors() {
     const grid = $('#doors');
     grid.innerHTML = DAYS.map((day, i) => {
-      const st = dayState(day);
+      const st = dayState(day, i);
       const cls = [
         'door',
         st.unlocked ? 'is-unlocked' : 'is-locked',
@@ -843,7 +849,7 @@
     }
 
     // re-render doors/status when a door unlocks while the page is open
-    const key = DAYS.map((d) => (dayState(d).unlocked ? 1 : 0)).join('') + phase();
+    const key = DAYS.map((d, i) => (dayState(d, i).unlocked ? 1 : 0)).join('') + phase();
     if (key !== stateKey) {
       stateKey = key;
       renderDoors();
@@ -929,7 +935,7 @@
 
     renderDoors();
     renderStatus();
-    stateKey = DAYS.map((d) => (dayState(d).unlocked ? 1 : 0)).join('') + phase();
+    stateKey = DAYS.map((d, i) => (dayState(d, i).unlocked ? 1 : 0)).join('') + phase();
     setInterval(tick, 1000);
 
     // preview banner
@@ -946,7 +952,7 @@
       const doorEl = e.target.closest('.door');
       if (!doorEl) return;
       const i = Number(doorEl.dataset.index);
-      const st = dayState(DAYS[i]);
+      const st = dayState(DAYS[i], i);
       if (st.unlocked) {
         openDay(i);
       } else {
@@ -964,6 +970,9 @@
     $('#modalClose').addEventListener('click', closeModal);
     $('#modalBackdrop').addEventListener('click', closeModal);
     addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // direct share link (?peek=N): open that day's door on arrival
+    if (peekIdx !== null) setTimeout(() => openDay(peekIdx), 450);
 
     // intro crawl
     $('#introSkip').addEventListener('click', endIntro);
