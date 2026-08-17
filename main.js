@@ -724,6 +724,73 @@
     setTimeout(() => showModal(day), reduced ? 0 : 420);
   }
 
+  /* ---------- daily character selection ---------- */
+  const charStore = {
+    read() {
+      try { return JSON.parse(localStorage.getItem('bw_char') || '{}'); } catch (e) { return {}; }
+    },
+    forDate(date) { return (this.read().byDate || {})[date] || null; },
+    current() { return this.read().current || null; },
+    set(id, date) {
+      try {
+        const d = this.read();
+        d.current = id;
+        if (date) { d.byDate = d.byDate || {}; d.byDate[date] = id; }
+        localStorage.setItem('bw_char', JSON.stringify(d));
+      } catch (e) { /* private mode — fine */ }
+    }
+  };
+
+  const charOptions = () => (SITE.characters && SITE.characters.options) || [];
+  const charById = (id) => charOptions().find((c) => c.id === id) || null;
+
+  function renderHero() {
+    const box = $('#heroFigure');
+    const opts = charOptions();
+    if (!box || !opts.length) { if (box) box.hidden = true; return; }
+    const chosen = charById(charStore.current());
+    const ch = chosen || opts[0];
+    const img = $('#heroFigureImg');
+    img.src = ch.image;
+    img.alt = `${SITE.honoree} as ${ch.name}`;
+    img.classList.toggle('is-faded', !!ch.fade);
+    const label = $('#heroFigureLabel');
+    label.textContent = chosen ? `Today: ${ch.name}` : (SITE.characters.label || ch.name);
+    label.hidden = false;
+    box.hidden = false;
+  }
+
+  function charSelHTML(activeId) {
+    return `
+      <div class="charsel">
+        <p class="charsel__hint">${esc((SITE.characters && SITE.characters.prompt) || 'Choose your character')}</p>
+        <div class="charsel__grid">
+          ${charOptions().map((c, ci) => `
+            <button type="button" class="charsel__card${c.id === activeId ? ' is-active' : ''}"
+                    data-char="${esc(c.id)}" style="animation-delay:${ci * 70}ms">
+              <span class="charsel__figure"><img src="${esc(c.image)}" alt="${esc(c.name)}" class="${c.fade ? 'is-faded' : ''}"></span>
+              <strong>${esc(c.name)}</strong>
+            </button>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  function wireCharCards(onPick) {
+    $$('.charsel__card', $('#modalBody')).forEach((btn) => {
+      btn.addEventListener('click', () => onPick(btn.dataset.char));
+    });
+  }
+
+  function renderDayContent(day) {
+    const isFinale = (day.blocks || []).some((b) => b.type === 'finale');
+    $('#modalBody').innerHTML = (day.blocks || [])
+      .map((b) => (RENDER[b.type] || RENDER.text)(b, day))
+      .join('');
+    postRender($('#modalBody'), day);
+    $('#modalBody').scrollTop = 0;
+    if (isFinale) fx.burst(9000);
+  }
+
   function showModal(day) {
     const st = dayState(day);
     const isFinale = (day.blocks || []).some((b) => b.type === 'finale');
@@ -736,22 +803,52 @@
       ${st.isToday ? '<span class="chip chip--today">Today</span>' : ''}`;
     $('#modalTitle').textContent = day.title;
     $('#modalTag').textContent = day.tagline || '';
-    $('#modalBody').innerHTML = (day.blocks || [])
-      .map((b) => (RENDER[b.type] || RENDER.text)(b, day))
-      .join('');
-    postRender($('#modalBody'), day);
 
+    // character select — once per day, skipped on shared ?peek links
+    const needsChar = charOptions().length && peekIdx === null && !charStore.forDate(day.date);
+    if (needsChar) {
+      $('#modalBody').innerHTML = charSelHTML(charStore.current());
+      wireCharCards((id) => {
+        charStore.set(id, day.date);
+        renderHero();
+        starfield.warp();
+        renderDayContent(day);
+      });
+      $('#modalBody').scrollTop = 0;
+    } else {
+      renderDayContent(day);
+    }
+
+    modal.hidden = false;
+    modalOpen = true;
+    document.body.classList.add('no-scroll');
+    requestAnimationFrame(() => modal.classList.add('is-open'));
+    $('#modalClose').focus({ preventScroll: true });
+
+    store.markOpened(day.date);
+    renderDoors();
+  }
+
+  // standalone picker — opens when Jake clicks his figure on the main page
+  function openCharPicker() {
+    if (!charOptions().length) return;
+    modal.classList.remove('modal--finale');
+    modal.style.setProperty('--accent', '#6cd7ff');
+    $('#modalChips').innerHTML = '';
+    $('#modalTitle').textContent = 'Choose Your Character';
+    $('#modalTag').textContent = `Who is ${SITE.honoree} today?`;
+    $('#modalBody').innerHTML = charSelHTML(charStore.current());
+    wireCharCards((id) => {
+      charStore.set(id, null);
+      renderHero();
+      closeModal();
+    });
     modal.hidden = false;
     modalOpen = true;
     document.body.classList.add('no-scroll');
     requestAnimationFrame(() => modal.classList.add('is-open'));
     $('#modalBody').scrollTop = 0;
     $('#modalClose').focus({ preventScroll: true });
-
-    store.markOpened(day.date);
-    renderDoors();
-
-    if (isFinale) fx.burst(9000);
   }
 
   function closeModal() {
@@ -919,16 +1016,16 @@
     $('#footerText').textContent = SITE.footer || '';
     document.title = `${SITE.honoree}'s Birthday Week — A Star Wars Story`;
 
-    // the birthday boy himself, next to the title
-    if (SITE.hero && SITE.hero.image) {
-      const img = $('#heroFigureImg');
-      img.src = SITE.hero.image;
-      img.alt = SITE.honoree || 'The birthday boy';
-      const label = $('#heroFigureLabel');
-      label.textContent = SITE.hero.label || '';
-      label.hidden = !SITE.hero.label;
-      $('#heroFigure').hidden = false;
-    }
+    // the birthday boy himself, next to the title — click him to switch character
+    renderHero();
+    const heroBox = $('#heroFigure');
+    heroBox.setAttribute('role', 'button');
+    heroBox.setAttribute('tabindex', '0');
+    heroBox.title = 'Change character';
+    heroBox.addEventListener('click', openCharPicker);
+    heroBox.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCharPicker(); }
+    });
 
     // hero countdown to the start of the week
     registerCountdown($('#heroCountdown'), parseLocal(SITE.startDate), 'IT BEGINS — OPEN DOOR ONE!', true);

@@ -28,9 +28,20 @@ const SITE = {
   footer: "Made with love (and the Force) by Aliia",
 
   // Jake himself, standing next to the title (delete this block to hide him)
-  hero: {
-    image: "assets/photos/jake-cutout.png",
-    label: "The Birthday Boy"
+  // Jake's playable characters. When a new door opens he picks who he is
+  // that day — the chosen one then stands guard next to the title.
+  // (He can change any time by clicking the figure on the main page.)
+  characters: {
+    label: "The Birthday Boy",
+    prompt: "A new day dawns. Choose your character.",
+    options: [
+      { id: "commander", name: "The Commander", image: "assets/photos/characters/commander.png" },
+      { id: "jedi", name: "The Jedi", image: "assets/photos/characters/jedi.png" },
+      { id: "pilot", name: "Red Five", image: "assets/photos/characters/pilot.png", fade: true },
+      { id: "trooper", name: "The Stormtrooper", image: "assets/photos/characters/trooper.png" },
+      { id: "vader", name: "Darth Jake", image: "assets/photos/characters/vader.png" },
+      { id: "jarjar", name: "Jar Jar Jake", image: "assets/photos/characters/jarjar.png", fade: true }
+    ]
   },
 
   // The opening crawl — plays once per visit (there's a Replay button in the footer).
