@@ -450,7 +450,7 @@ const DAYS = [
           { title: "Movie night — your pick", detail: "Yes, even a full Star Wars marathon. Yes, even the prequels." },
           { title: "One 20-minute massage", detail: "Guaranteed to restore balance to the Force." },
           { title: "A day free of chores", detail: "The droids (me) will handle everything." },
-          { title: "Dinner at the cantina of your choice", detail: "Anywhere in this star system." },
+          { title: "One day of whatever Jake wants", detail: "UNLIMITED POWER — for 24 hours, your wish is the law of the galaxy." },
           { title: "One wish — anything*", detail: "*Within reason. And within this star system." }
         ]
       },
