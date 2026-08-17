@@ -21,10 +21,10 @@ python3 -m http.server 8000
 | Date   | Episode | Title                      | What's inside                          |
 | ------ | ------- | -------------------------- | -------------------------------------- |
 | Aug 24 | I       | The Birthday Week Awakens  | Opening announcement + photo gallery   |
-| Aug 25 | II      | Attack of the Clones       | Childhood / baby photos of Jake        |
+| Aug 25 | II      | The Phantom Date           | Surprise-date mission briefing (5pm)   |
 | Aug 26 | III     | The Jedi Trials            | Interactive trivia quiz with ranks     |
 | Aug 27 | IV      | A New Hope                 | Holographic love letter                |
-| Aug 28 | V       | The Cantina Strikes Back   | Date-night mission briefing            |
+| Aug 28 | V       | The Baby Strikes Back      | Childhood / baby photos of Jake        |
 | Aug 29 | VI      | The Fleet Arrives          | Relatives' ships with personal messages + countdown to midnight |
 | Aug 30 | VII     | The Rise of Jake           | HAPPY BIRTHDAY finale with fireworks + coupon book |
 

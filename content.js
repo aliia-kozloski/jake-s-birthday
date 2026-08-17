@@ -98,33 +98,54 @@ const DAYS = [
     ]
   },
 
-  /* ---------- DAY 2 · AUG 25 ------------------------------------------- */
+  /* ---------- DAY 2 · AUG 25 · SURPRISE DATE ---------------------------- */
   {
     date: "2026-08-25",
     episode: "II",
-    title: "Attack of the Clones",
-    teaser: "Recovered archives…",
-    tagline: "Classified holos of a young Padawan.",
+    title: "The Phantom Date",
+    teaser: "Sealed orders…",
+    tagline: "Destination: classified.",
     saber: "#4f8cff",
-    icon: "droid",
+    icon: "xwing",
     blocks: [
       {
         type: "text",
-        title: "Intel Update",
+        title: "Sealed Orders",
         paragraphs: [
-          "Our archivists have recovered classified holos of a young Padawan named Jake.",
-          "Analysts agree: 100% adorable, and strong with the Force from the very start."
+          "Rebel Command requires your presence this afternoon — Tuesday, August 25.",
+          "Where are we going? Classified. It will be a surprise. No questions, no guessing, and no Jedi mind tricks."
         ]
       },
       {
-        type: "gallery",
-        title: "Young Padawan Archives",
-        note: "Add baby / childhood photos of Jake here.",
-        photos: [
-          { placeholder: true, caption: "Baby Jake — already plotting" },
-          { placeholder: true, caption: "The training years" },
-          { placeholder: true, caption: "The haircut we don't talk about" },
-          { placeholder: true, caption: "Chosen One energy" }
+        type: "mission",
+        title: "Mission Briefing",
+        steps: [
+          {
+            time: "·",
+            label: "Refuel",
+            detail: "Early dinner at home base first — cooked by me. Come hungry."
+          },
+          {
+            time: "16:15",
+            label: "Departure",
+            detail: "We leave at 4:15pm sharp. Pick your transport, pilot: a 30-minute walk, or a 20-minute bus ride."
+          },
+          {
+            time: "17:00",
+            label: "The mission",
+            detail: "We arrive at 5:00pm. What happens there is known only to Rebel Command (me)."
+          },
+          {
+            time: "·",
+            label: "Dress code",
+            detail: "Comfy, but nice. Rebel casual."
+          }
+        ]
+      },
+      {
+        type: "text",
+        paragraphs: [
+          "That is all the intel you get, Skywalker. See you at 16:15."
         ]
       }
     ]
@@ -247,35 +268,37 @@ const DAYS = [
   {
     date: "2026-08-28",
     episode: "V",
-    title: "The Cantina Strikes Back",
-    teaser: "Mission briefing pending…",
-    tagline: "A mission briefing from Rebel Command.",
+    title: "The Baby Strikes Back",
+    teaser: "Recovered archives…",
+    tagline: "Classified holos of a very young Padawan.",
     saber: "#ff9d3b",
-    icon: "xwing",
+    icon: "droid",
     blocks: [
       {
         type: "text",
-        title: "Priority Transmission",
+        title: "Intel Update",
         paragraphs: [
-          "Rebel Command has authorized a special operation for tonight. Attendance: mandatory. Dress code: devastatingly handsome. Mission details below."
+          "Our archivists have recovered classified holos of a young Padawan named Jake.",
+          "Analysts agree: 100% adorable, and strong with the Force from the very start."
         ]
       },
       {
-        type: "mission",
-        title: "Operation: Date Night",
-        steps: [
-          { time: "18:00", label: "Rendezvous", detail: "[EDIT ME — where you'll meet, e.g. “home base, dressed to impress”]" },
-          { time: "18:30", label: "Refuel at the cantina", detail: "[EDIT ME — dinner at your restaurant of choice]" },
-          { time: "20:30", label: "The mission itself", detail: "[EDIT ME — movie? stargazing? arcade? surprise activity]" },
-          { time: "23:00", label: "Return to base", detail: "Debrief on the couch. Snacks provisioned." }
+        type: "gallery",
+        title: "Young Padawan Archives",
+        note: "Add baby / childhood photos of Jake here.",
+        photos: [
+          { placeholder: true, caption: "Baby Jake — already plotting" },
+          { placeholder: true, caption: "The training years" },
+          { placeholder: true, caption: "The haircut we don't talk about" },
+          { placeholder: true, caption: "Chosen One energy" }
         ]
       }
       // Want to add a playlist or a video? Add a links block like this:
       // {
       //   type: "links",
-      //   title: "Mission Soundtrack",
+      //   title: "Soundtrack",
       //   items: [
-      //     { label: "▶ Our playlist", url: "https://open.spotify.com/playlist/...", note: "for the drive" }
+      //     { label: "▶ Our playlist", url: "https://open.spotify.com/playlist/...", note: "press play" }
       //   ]
       // }
     ]
