@@ -88,12 +88,11 @@ const DAYS = [
         title: "The Story So Far",
         note: "A few of my favorite holos of us. More intel arrives all week.",
         photos: [
-          // To use real photos, replace a line with:
-          // { src: "assets/photos/us-1.jpg", caption: "Us, somewhere in the Outer Rim" },
-          { placeholder: true, caption: "Us, somewhere in the Outer Rim" },
-          { placeholder: true, caption: "My favorite co-pilot" },
-          { placeholder: true, caption: "Date night on Coruscant" },
-          { placeholder: true, caption: "The day it all began" }
+          // Add more photos any time: copy a line and change the file + caption.
+          // tall: true = portrait orientation frame.
+          { src: "assets/photos/first-texting.jpg", caption: "Sep 4, 2022 — the first transmission", tall: true },
+          { src: "assets/photos/first-date.jpg", caption: "One of the first dates", tall: true },
+          { src: "assets/photos/first-trip.jpg", caption: "The first trip across the galaxy" }
         ]
       }
     ]
