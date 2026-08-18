@@ -344,12 +344,17 @@ const DAYS = [
       {
         type: "gallery",
         title: "Young Padawan Archives",
-        note: "Add baby / childhood photos of Jake here.",
+        note: "Recovered from the family archives — declassified today.",
         photos: [
-          { placeholder: true, caption: "Baby Jake — already plotting" },
-          { placeholder: true, caption: "The training years" },
-          { placeholder: true, caption: "The haircut we don't talk about" },
-          { placeholder: true, caption: "Chosen One energy" }
+          { src: "assets/photos/young/03.jpg", caption: "Baby Jake — already plotting", tall: true },
+          { src: "assets/photos/young/02.jpg", caption: "The prophecy, confirmed early (see shirt)" },
+          { src: "assets/photos/young/05.jpg", caption: "With Grandma — the original Jedi Council" },
+          { src: "assets/photos/young/01.jpg", caption: "The squadron, before flight school" },
+          { src: "assets/photos/young/04.jpg", caption: "Early simulator training with the crew" },
+          { src: "assets/photos/young/06.jpg", caption: "Guardian of small furry lifeforms" },
+          { src: "assets/photos/young/07.jpg", caption: "The clan, assembled" },
+          { src: "assets/photos/young/08.jpg", caption: "Off duty at the rebel base" },
+          { src: "assets/photos/young/09.jpg", caption: "Young captain, surveying the Outer Rim" }
         ]
       }
       // Want to add a playlist or a video? Add a links block like this:
