@@ -464,6 +464,23 @@ const DAYS = [
             signoff: "— Your princess"
           },
           {
+            name: "Pamela",
+            callsign: "The Astromech",
+            ship: "ywing",
+            color: "#4f8cff",
+            photo: "assets/photos/fleet/pamela.jpg",
+            message: [
+              "A birthday haiku, composed for the occasion:",
+              "A long time ago",
+              "You were born into this world",
+              "May the Force be yours"
+            ],
+            photos: [
+              { src: "assets/photos/fleet/pamela-full.jpg", caption: "Unit R2-PAM, reporting for birthday duty", tall: true }
+            ],
+            signoff: "— Pamela"
+          },
+          {
             name: "James",
             callsign: "Gold Leader",
             ship: "ywing",
