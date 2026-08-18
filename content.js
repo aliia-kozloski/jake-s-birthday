@@ -27,7 +27,6 @@ const SITE = {
   endDate: "2026-08-30",   // the birthday itself
   footer: "Made with love (and the Force) by Aliia",
 
-  // Jake himself, standing next to the title (delete this block to hide him)
   // Jake's playable characters. When a new door opens he picks who he is
   // that day — the chosen one then stands guard next to the title.
   // (He can change any time by clicking the figure on the main page.)
@@ -245,33 +244,82 @@ const DAYS = [
     ]
   },
 
-  /* ---------- DAY 4 · AUG 27 ------------------------------------------- */
+  /* ---------- DAY 4 · AUG 27 · FAKE PRESS DAY --------------------------- */
   {
     date: "2026-08-27",
     episode: "IV",
-    title: "A New Hope",
-    teaser: "A transmission inbound…",
-    tagline: "An incoming message — for your eyes only.",
+    title: "HoloNet News",
+    teaser: "Press embargo lifts…",
+    tagline: "You're on every front page in the galaxy.",
     saber: "#4bd5ee",
     icon: "holo",
     blocks: [
       {
-        type: "hologram",
-        from: "Aliia",
-        title: "A message from your favorite rebel",
+        type: "text",
+        title: "Breaking",
         paragraphs: [
-          "Jake — if you're reading this, the transmission worked and the Empire didn't intercept it.",
-          "[EDIT ME — write your letter here. Ideas: your favorite memory together, the moment you knew, the thing you love most about him. Add as many paragraphs as you like — each one goes in quotes, separated by commas.]",
-          "Happy almost-birthday. I love you more than all the stars this website can render — and I checked, it renders a lot."
-        ],
-        signoff: "Yours across the galaxy, — Aliia"
+          "The press embargo lifted at dawn, and it's madness out there. Every outlet from Coruscant to Cupertino is somehow running the same face on its front page.",
+          "We pulled today's clippings for your records, Mr. CEO."
+        ]
       },
-      // Prefer to say it on camera? Record a video and add it like this:
-      // {
-      //   type: "video",
-      //   title: "A holomessage from Aliia",
-      //   src: "assets/photos/aliia-message.mp4"   // or a YouTube/Vimeo link
-      // }
+      {
+        type: "press",
+        items: [
+          {
+            style: "forbes",
+            format: "article",
+            outlet: "Forbes",
+            headline: "Keeper.ai CEO Named Husband of the Year",
+            byline: "Forbes Staff · August 27, 2026",
+            photo: "assets/photos/press/forbes.jpg",
+            pos: "center 45%",
+            body: [
+              "In a decision insiders describe as “unanimous, immediate, and frankly overdue,” Jake — chief executive of Keeper.ai — has been named Husband of the Year. Sources close to the matter confirmed the award this morning over breakfast, which he also made.",
+              "“His fundamentals are exceptional,” said one analyst (his wife). “Strong hug performance, consistent snack logistics, and he remembers things I said once, in passing, months ago.” The committee confirmed no other nominees were seriously considered."
+            ]
+          },
+          {
+            style: "gq",
+            format: "cover",
+            masthead: "GQ",
+            kicker: "August 2026 · The Style Issue",
+            headline: "The Best-Dressed CEO in America Speaks",
+            subhead: "“I just wear whatever my wife says looks good.”",
+            photo: "assets/photos/press/gq.jpg"
+          },
+          {
+            style: "bonappetit",
+            format: "cover",
+            masthead: "bon appétit",
+            kicker: "The Birthday Issue",
+            headline: "The Steak Whisperer",
+            subhead: "Inside the home kitchen critics can't get a table at",
+            photo: "assets/photos/press/bonappetit.jpg"
+          },
+          {
+            style: "techcrunch",
+            format: "article",
+            outlet: "TechCrunch",
+            headline: "Keeper.ai CEO closes his most important round yet: Year 3 of marriage, oversubscribed",
+            byline: "The Galactic Press Desk · 9:00 AM · August 27, 2026",
+            photo: "assets/photos/press/techcrunch.jpg",
+            pos: "center 45%",
+            body: [
+              "Keeper.ai's chief executive has quietly closed his most important round to date: Year 3 of Marriage, which sources say was oversubscribed within minutes of opening.",
+              "The round was led by longtime partner Aliia Capital, doubling down after what one investor called “outstanding year-two performance across every metric.” Terms reportedly include unlimited forehead kisses and a lifetime lock-up period. Asked about valuation, the CEO declined to comment, calling the partnership “priceless.”"
+            ]
+          },
+          {
+            style: "people",
+            format: "cover",
+            masthead: "PEOPLE",
+            kicker: "Special Double Issue",
+            headline: "Sexiest Man Alive",
+            subhead: "Sources close to the matter (his wife) confirm",
+            photo: "assets/photos/press/people.jpg"
+          }
+        ]
+      }
     ]
   },
 
@@ -452,6 +500,23 @@ const DAYS = [
           "And above all — may the Force be with you. Always."
         ]
       },
+      {
+        type: "hologram",
+        from: "Aliia",
+        title: "A message from your favorite rebel",
+        paragraphs: [
+          "Jake — if you're reading this, the transmission worked and the Empire didn't intercept it.",
+          "[EDIT ME — write your letter here. Ideas: your favorite memory together, the moment you knew, the thing you love most about him. Add as many paragraphs as you like — each one goes in quotes, separated by commas.]",
+          "Happy birthday. I love you more than all the stars this website can render — and I checked, it renders a lot."
+        ],
+        signoff: "Yours across the galaxy, — Aliia"
+      },
+      // Prefer to say it on camera? Record a video and add it like this:
+      // {
+      //   type: "video",
+      //   title: "A holomessage from Aliia",
+      //   src: "assets/photos/aliia-message.mp4"   // or a YouTube/Vimeo link
+      // },
       {
         type: "coupons",
         title: "Birthday Spoils: The Coupon Book",

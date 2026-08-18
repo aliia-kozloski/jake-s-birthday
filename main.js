@@ -495,6 +495,13 @@
         ${videoEmbed(b.src, b.poster)}
       </div>`,
 
+    press: (b) => `
+      <div class="blk blk--press">
+        ${b.title ? `<h3 class="blk__title">${esc(b.title)}</h3>` : ''}
+        ${b.note ? `<p class="blk__note">${esc(b.note)}</p>` : ''}
+        <div class="press">${(b.items || []).map(pressItem).join('')}</div>
+      </div>`,
+
     finale: (b) => `
       <div class="blk blk--finale">
         ${CAKE_BIG}
@@ -592,6 +599,37 @@
       const body = root.closest('.modal__body');
       if (body) body.scrollTop = 0;
     });
+  }
+
+  // one fake press item — either a magazine cover or a news-article card
+  function pressItem(it) {
+    const style = esc(it.style || 'forbes');
+    const posAttr = it.pos ? ` style="object-position:${esc(it.pos)}"` : '';
+    if (it.format === 'cover') {
+      return `
+      <article class="mag mag--cover mag--${style}">
+        <img src="${esc(it.photo)}" alt="${esc(it.headline)}"${posAttr}>
+        <div class="mag__scrim"></div>
+        <div class="mag__top">
+          <div class="mag__masthead">${esc(it.masthead || it.outlet || '')}</div>
+          ${it.kicker ? `<div class="mag__kicker">${esc(it.kicker)}</div>` : ''}
+        </div>
+        <div class="mag__lines">
+          <h4>${esc(it.headline)}</h4>
+          ${it.subhead ? `<p>${esc(it.subhead)}</p>` : ''}
+        </div>
+      </article>`;
+    }
+    return `
+      <article class="mag mag--article mag--${style}">
+        <div class="news__bar">${esc(it.outlet || '')}</div>
+        <div class="news__inner">
+          <h4 class="news__headline">${esc(it.headline)}</h4>
+          ${it.byline ? `<p class="news__byline">${esc(it.byline)}</p>` : ''}
+          ${it.photo ? `<img class="news__photo" src="${esc(it.photo)}" alt="${esc(it.headline)}" loading="lazy"${posAttr}>` : ''}
+          <div class="news__body">${(it.body || []).map((p) => `<p>${esc(p)}</p>`).join('')}</div>
+        </div>
+      </article>`;
   }
 
   function photoFig(p) {
