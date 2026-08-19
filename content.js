@@ -415,7 +415,7 @@ const DAYS = [
         /* ============================================================
            [EDIT ME] One entry per relative/friend. For each ship:
            - name / callsign : who they are (callsign is optional fun)
-           - ship  : xwing | awing | ywing | falcon | shuttle
+           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser
                      (the site draws it — no artwork needed)
            - color : that ship's glow color
            - photo : OPTIONAL — their face photo; shown as a big round
@@ -482,14 +482,20 @@ const DAYS = [
           },
           {
             name: "James",
-            callsign: "Gold Leader",
-            ship: "ywing",
-            color: "#ffcf4d",
-            // photo: "assets/photos/fleet/james.jpg",       (face → cockpit)
-            // image: "assets/photos/fleet/james-ship.png",  (your photoshopped ship)
-            // video: "assets/photos/fleet/james.mp4",       (or a YouTube link)
-            message: ["[EDIT ME — James's message.]"],
-            signoff: "— James"
+            callsign: "Admiral Ackbar",
+            ship: "cruiser", // Home One Star Cruiser
+            color: "#ff8c5a",
+            photo: "assets/photos/fleet/james.jpg",
+            message: [
+              "Son.",
+              "The candles are armed. The cake is surrounded. Singing has begun. This celebration is fully operational!",
+              "It is a trap!",
+              "Happy Birthday and may the force be with you."
+            ],
+            photos: [
+              { src: "assets/photos/fleet/james-full.jpg", caption: "The Admiral, on the bridge of Home One Star Cruiser" }
+            ],
+            signoff: "— Admiral Ackbar"
           },
           {
             name: "Sarah",

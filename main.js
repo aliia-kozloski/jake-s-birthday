@@ -124,6 +124,15 @@
         <path d="M60 4l5 36H55z"/>
         <path d="M53 44L14 84h22M67 44l39 40H84"/>
         <path d="M50 44h20v24a10 10 0 0 1-20 0z"/>`)
+    },
+    cruiser: { // Home One — Mon Calamari star cruiser
+      cockpit: { x: 58, y: 42, r: 11 },
+      art: SHIP_WRAP(`
+        <ellipse cx="56" cy="52" rx="49" ry="14"/>
+        <path d="M28 41c6-9 16-14 28-14s24 6 29 14"/>
+        <circle cx="44" cy="34" r="2.5"/><circle cx="58" cy="31" r="2.5"/><circle cx="72" cy="34" r="2.5"/>
+        <path d="M105 47v10M110 49v6"/>
+        <path d="M18 49h26M30 59h34" opacity=".4"/>`)
     }
   };
 
