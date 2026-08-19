@@ -545,6 +545,14 @@ img { max-width: 100%; display: block; }
   background: var(--panel-2);
 }
 
+/* a gallery with a single photo shows it big and centered */
+.gallery .ph:only-child {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .ph img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 
 /* portrait-orientation photo (add tall: true to the photo in content.js) */
