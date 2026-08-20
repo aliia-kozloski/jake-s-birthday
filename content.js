@@ -507,11 +507,18 @@ const DAYS = [
           },
           {
             name: "Stella",
-            callsign: "Stardust",
+            callsign: "Chewbacca",
             ship: "falcon",
-            color: "#4bd5ee",
-            message: ["[EDIT ME — Stella's message.]"],
-            signoff: "— Stella"
+            color: "#c98f3f",
+            photo: "assets/photos/fleet/stella.jpg",
+            message: [
+              "AAARRRRREERGH!",
+              "Translation: “Happy birthday Jake, we love you so much!”"
+            ],
+            photos: [
+              { src: "assets/photos/fleet/stella-full.jpg", caption: "First mate Stella, mid-hyperspace jump", tall: true }
+            ],
+            signoff: "— Chewie"
           }
         ]
       },
