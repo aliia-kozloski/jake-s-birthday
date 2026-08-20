@@ -415,7 +415,7 @@ const DAYS = [
         /* ============================================================
            [EDIT ME] One entry per relative/friend. For each ship:
            - name / callsign : who they are (callsign is optional fun)
-           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser
+           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter
                      (the site draws it — no artwork needed)
            - color : that ship's glow color
            - photo : OPTIONAL — their face photo; shown as a big round
@@ -519,6 +519,25 @@ const DAYS = [
               { src: "assets/photos/fleet/stella-full.jpg", caption: "First mate Stella, mid-hyperspace jump", tall: true }
             ],
             signoff: "— Chewie"
+          },
+          {
+            name: "Roman",
+            callsign: "Anakin Skywalker",
+            ship: "jedifighter", // flying with the Open Circle Armada
+            color: "#ffd23f",
+            photo: "assets/photos/fleet/roman.jpg",
+            message: [
+              "Happy Birthday, Jake.",
+              "I don't like sand… but I love watching you get older while I stay forever 19 in the Force.",
+              "I may not have the high ground, but you underestimate my presents.",
+              "You're the real chosen one today… and right now, this is podracing.",
+              "Time to hit the battlefield. This is where the fun begins.",
+              "We smoke not just the clankers, but the cake and the candles too."
+            ],
+            photos: [
+              { src: "assets/photos/fleet/roman-full.jpg", caption: "General Skywalker, leading the Open Circle Armada", tall: true }
+            ],
+            signoff: "— Anakin Skywalker"
           }
         ]
       },

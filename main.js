@@ -133,6 +133,14 @@
         <circle cx="44" cy="34" r="2.5"/><circle cx="58" cy="31" r="2.5"/><circle cx="72" cy="34" r="2.5"/>
         <path d="M105 47v10M110 49v6"/>
         <path d="M18 49h26M30 59h34" opacity=".4"/>`)
+    },
+    jedifighter: { // Eta-2 — Anakin's Jedi interceptor
+      cockpit: { x: 60, y: 40, r: 10 },
+      art: SHIP_WRAP(`
+        <path d="M55 30h10v18a5 5 0 0 1-10 0z"/>
+        <path d="M56 30L49 6M64 30l7-24"/>
+        <path d="M54 36L12 56l8 14 34-10zM66 36l42 20-8 14-34-10z"/>
+        <path d="M50 64v10M70 64v10" opacity=".6"/>`)
     }
   };
 
