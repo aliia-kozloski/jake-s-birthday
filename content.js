@@ -415,7 +415,7 @@ const DAYS = [
         /* ============================================================
            [EDIT ME] One entry per relative/friend. For each ship:
            - name / callsign : who they are (callsign is optional fun)
-           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter | sailbarge
+           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter | sailbarge | tantive
                      (the site draws it — no artwork needed)
            - color : that ship's glow color
            - photo : OPTIONAL — their face photo; shown as a big round
@@ -554,6 +554,22 @@ const DAYS = [
               { src: "assets/photos/fleet/anna-full.jpg", caption: "Mr. Salacious Crumb (Anna), mid-snack at Jabba's court", tall: true }
             ],
             signoff: "— Anna"
+          },
+          {
+            name: "Izzy",
+            callsign: "The Padawan",
+            ship: "tantive", // Leia's blockade runner — Leia-terally her ship
+            color: "#ff9ebb",
+            photo: "assets/photos/fleet/izzy.jpg",
+            message: [
+              "Happy birthday, Jake! May the Force be with you today and always.",
+              "I'm so grateful to have you as my big bro. You've always been someone who inspires me, and I'm so happy to see where life has taken you and excited to see where the Force takes you next. You're truly one of the best brothers in the galaxy.",
+              "Hope your birthday is Leia-terally legendary. Love you! ❤️🚀✨"
+            ],
+            photos: [
+              { src: "assets/photos/fleet/izzy-full.jpg", caption: "Padawan Izzy, at the first Jedi Temple on Ahch-To", tall: true }
+            ],
+            signoff: "— Izzy, the Skywalker sister"
           }
         ]
       },

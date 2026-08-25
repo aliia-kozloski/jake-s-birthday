@@ -149,6 +149,17 @@
         <path d="M40 16L28 56h24zM80 22L70 56h20z"/>
         <path d="M40 16v40M80 22v34" opacity=".5"/>
         <circle cx="36" cy="68" r="2"/><circle cx="60" cy="68" r="2"/><circle cx="84" cy="68" r="2"/>`)
+    },
+    tantive: { // Tantive IV — Leia's blockade runner
+      cockpit: { x: 60, y: 40, r: 11 },
+      art: SHIP_WRAP(`
+        <rect x="10" y="34" width="10" height="28" rx="4"/>
+        <path d="M20 44h12M20 52h12"/>
+        <rect x="32" y="41" width="54" height="15" rx="7"/>
+        <rect x="84" y="34" width="12" height="29" rx="3"/>
+        <circle cx="103" cy="40" r="4.5"/><circle cx="103" cy="57" r="4.5"/><circle cx="110" cy="48.5" r="4.5"/>
+        <path d="M45 41v-6h8" opacity=".6"/>
+        <path d="M38 49h40" opacity=".4"/>`)
     }
   };
 
