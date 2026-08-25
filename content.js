@@ -338,7 +338,7 @@ const DAYS = [
         title: "Intel Update",
         paragraphs: [
           "Our archivists have recovered classified holos of a young Padawan named Jake.",
-          "Analysts agree: 100% adorable, and strong with the Force from the very start."
+          "Analysts agree: 100% adorable, and strong with the Force from the very start. The file runs long — from day one all the way to the present."
         ]
       },
       {
@@ -520,6 +520,20 @@ const DAYS = [
               { src: "assets/photos/grad/03.jpg", caption: "The Elder Council, still in attendance" },
               { src: "assets/photos/grad/07.jpg", caption: "A selfie from the big day", tall: true },
               { src: "assets/photos/grad/05.jpg", caption: "Next mission: orientation day, badge and all", tall: true }
+            ]
+          },
+          {
+            title: "Charleston, 2019",
+            subtitle: "Oysters, palms and a helicopter",
+            cover: "assets/photos/charleston/05.jpg",
+            photos: [
+              { src: "assets/photos/charleston/03.jpg", caption: "Palms and pastel: the Charleston sector" },
+              { src: "assets/photos/charleston/01.jpg", caption: "Cleared for takeoff" },
+              { src: "assets/photos/charleston/02.jpg", caption: "Porch duty" },
+              { src: "assets/photos/charleston/04.jpg", caption: "Oyster detail with Dad" },
+              { src: "assets/photos/charleston/05.jpg", caption: "The shells did not stand a chance" },
+              { src: "assets/photos/charleston/07.jpg", caption: "Refueling: smokehouse rations" },
+              { src: "assets/photos/charleston/06.jpg", caption: "Night patrol at the pineapple fountain", tall: true }
             ]
           }
         ]
