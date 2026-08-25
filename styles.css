@@ -535,6 +535,7 @@ img { max-width: 100%; display: block; }
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  align-items: start; /* don't stretch short tiles to match tall neighbours */
   gap: 14px;
 }
 
@@ -576,6 +577,109 @@ img { max-width: 100%; display: block; }
 .ph__slot svg { width: 30px; height: 30px; opacity: 0.6; }
 .ph__slot span { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; }
 .ph__slot small { font-size: 12px; letter-spacing: 0.06em; color: #43506e; }
+
+/* albums */
+.albums__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.album {
+  position: relative;
+  display: block;
+  padding: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  animation: ship-in 0.45s ease backwards;
+}
+
+.album:hover, .album:focus-visible {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  box-shadow: 0 12px 34px -12px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.album:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* the "more photos underneath" stack */
+.album__stack {
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.album__stack::before, .album__stack::after {
+  content: "";
+  position: absolute; left: 8px; right: 8px; bottom: -5px;
+  height: 12px;
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  background: var(--panel);
+}
+.album__stack::after { left: 15px; right: 15px; bottom: -10px; opacity: 0.6; }
+
+.album__cover {
+  position: relative; display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 11px 11px 0 0;
+  background: var(--panel);
+}
+.album__cover img { width: 100%; height: 100%; object-fit: cover; }
+
+.album__count {
+  position: absolute; right: 8px; bottom: 8px;
+  padding: 3px 9px 2px;
+  border-radius: 999px;
+  background: rgba(5, 8, 15, 0.82);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  color: color-mix(in srgb, var(--accent) 85%, white);
+  font-size: 12px; letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.album__meta { display: block; padding: 11px 12px 13px; text-align: center; }
+
+.album__meta strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: 18px; letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.album__meta em {
+  display: block; margin-top: 3px;
+  font-style: normal;
+  font-size: 14px; letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.albums__view .albums__back { margin-bottom: 14px; }
+
+.albums__heading {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: clamp(24px, 4vw, 34px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  color: color-mix(in srgb, var(--accent) 85%, white);
+  margin-bottom: 6px;
+}
+
+.albums__view .blk__note { margin-bottom: 16px; }
+
+@media (max-width: 760px) {
+  .albums__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .album__meta strong { font-size: 15.5px; }
+  .album__meta em { font-size: 12.5px; }
+}
 
 /* hologram letter */
 .holo {

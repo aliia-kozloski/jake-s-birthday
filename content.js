@@ -70,7 +70,7 @@ const SITE = {
      icon    — one of: suns, droid, saber, holo, xwing, ticket, cake
      blocks  — the content inside, in order. Block types:
                opening, text, gallery, hologram, quiz, mission,
-               fleet, coupons, countdown, links, video, finale
+               fleet, albums, coupons, countdown, links, video, finale
    ========================================================================== */
 
 const DAYS = [
@@ -342,40 +342,83 @@ const DAYS = [
         ]
       },
       {
-        type: "gallery",
+        type: "albums",
         title: "Young Padawan Archives",
-        note: "Recovered from the family archives — declassified today.",
+        note: "Recovered from the family archives — declassified today. Click an album to open it.",
+        /* Each album = one cover tile. Add albums by copying a block below.
+           cover: the photo shown on the tile (defaults to the first photo). */
+        albums: [
+          {
+            title: "The Beginning",
+            subtitle: "Arrival in this galaxy",
+            cover: "assets/photos/young/22.jpg",
+            photos: [
+              { src: "assets/photos/young/22.jpg", caption: "Day one in this galaxy" },
+              { src: "assets/photos/young/13.jpg", caption: "First press appearance — the HoloNet started early", tall: true },
+              { src: "assets/photos/young/03.jpg", caption: "Baby Jake — already plotting", tall: true },
+              { src: "assets/photos/young/11.jpg", caption: "First steps, supervised by Grandpa" },
+              { src: "assets/photos/young/17.jpg", caption: "Diplomatic negotiations, age two" }
+            ]
+          },
+          {
+            title: "Small But Mighty",
+            subtitle: "The training years",
+            cover: "assets/photos/young/19.jpg",
+            photos: [
+              { src: "assets/photos/young/19.jpg", caption: "Space cowboy era", tall: true },
+              { src: "assets/photos/young/28.jpg", caption: "The happiest smuggler in the spaceport", tall: true },
+              { src: "assets/photos/young/32.jpg", caption: "The Force face, mastered early", tall: true },
+              { src: "assets/photos/young/21.jpg", caption: "Life Day, back in the day", tall: true },
+              { src: "assets/photos/young/12.jpg", caption: "Graduated with honors", tall: true }
+            ]
+          },
+          {
+            title: "Youngling Academy",
+            subtitle: "Playground trials",
+            cover: "assets/photos/young/26.jpg",
+            photos: [
+              { src: "assets/photos/young/26.jpg", caption: "Youngling academy, morning lineup" },
+              { src: "assets/photos/young/27.jpg", caption: "Climbing trials" },
+              { src: "assets/photos/young/25.jpg", caption: "Pod-racing, training wheels edition" },
+              { src: "assets/photos/young/02.jpg", caption: "The prophecy, confirmed early (see shirt)" },
+              { src: "assets/photos/young/16.jpg", caption: "Archival footage: “We're gonna see Star Wars”" }
+            ]
+          },
+          {
+            title: "The Elders",
+            subtitle: "Family & the original Council",
+            cover: "assets/photos/young/23.jpg",
+            photos: [
+              { src: "assets/photos/young/23.jpg", caption: "The Elder Council, in session" },
+              { src: "assets/photos/young/24.jpg", caption: "Sunny afternoon with Grandma" },
+              { src: "assets/photos/young/05.jpg", caption: "With Grandma — the original Jedi Council" },
+              { src: "assets/photos/young/15.jpg", caption: "Graduation day with Mom", tall: true },
+              { src: "assets/photos/young/31.jpg", caption: "Harbor-side briefing with a Padawan" }
+            ]
+          },
+          {
+            title: "The Squadron",
+            subtitle: "The clan, assembled",
+            cover: "assets/photos/young/07.jpg",
+            photos: [
+              { src: "assets/photos/young/07.jpg", caption: "The clan, assembled" },
+              { src: "assets/photos/young/01.jpg", caption: "The squadron, before flight school" },
+              { src: "assets/photos/young/04.jpg", caption: "Early simulator training with the crew" },
+              { src: "assets/photos/young/18.jpg", caption: "Commander Jake with young recruits" },
+              { src: "assets/photos/young/20.jpg", caption: "Chairing the younglings' council" },
+              { src: "assets/photos/young/06.jpg", caption: "Guardian of small furry lifeforms" },
+              { src: "assets/photos/young/08.jpg", caption: "Off duty at the rebel base" },
+              { src: "assets/photos/young/09.jpg", caption: "Young captain, surveying the Outer Rim" },
+              { src: "assets/photos/young/10.jpg", caption: "Long-range communications, early tech" },
+              { src: "assets/photos/young/14.jpg", caption: "Gala training: black-tie protocol" }
+            ]
+          }
+        ]
+      },
+      {
+        type: "gallery",
+        title: "Recovered Document",
         photos: [
-          { src: "assets/photos/young/22.jpg", caption: "Day one in this galaxy" },
-          { src: "assets/photos/young/13.jpg", caption: "First press appearance — the HoloNet started early", tall: true },
-          { src: "assets/photos/young/03.jpg", caption: "Baby Jake — already plotting", tall: true },
-          { src: "assets/photos/young/17.jpg", caption: "Diplomatic negotiations, age two" },
-          { src: "assets/photos/young/19.jpg", caption: "Space cowboy era", tall: true },
-          { src: "assets/photos/young/11.jpg", caption: "First steps, supervised by Grandpa" },
-          { src: "assets/photos/young/28.jpg", caption: "The happiest smuggler in the spaceport", tall: true },
-          { src: "assets/photos/young/23.jpg", caption: "The Elder Council, in session" },
-          { src: "assets/photos/young/26.jpg", caption: "Youngling academy, morning lineup" },
-          { src: "assets/photos/young/27.jpg", caption: "Climbing trials" },
-          { src: "assets/photos/young/25.jpg", caption: "Pod-racing, training wheels edition" },
-          { src: "assets/photos/young/12.jpg", caption: "Youngling academy: graduated with honors", tall: true },
-          { src: "assets/photos/young/21.jpg", caption: "Life Day, back in the day", tall: true },
-          { src: "assets/photos/young/24.jpg", caption: "Sunny afternoon with Grandma" },
-          { src: "assets/photos/young/02.jpg", caption: "The prophecy, confirmed early (see shirt)" },
-          { src: "assets/photos/young/05.jpg", caption: "With Grandma — the original Jedi Council" },
-          { src: "assets/photos/young/32.jpg", caption: "The Force face, mastered early", tall: true },
-          { src: "assets/photos/young/01.jpg", caption: "The squadron, before flight school" },
-          { src: "assets/photos/young/04.jpg", caption: "Early simulator training with the crew" },
-          { src: "assets/photos/young/16.jpg", caption: "Archival footage: “We're gonna see Star Wars”" },
-          { src: "assets/photos/young/06.jpg", caption: "Guardian of small furry lifeforms" },
-          { src: "assets/photos/young/18.jpg", caption: "Commander Jake with young recruits" },
-          { src: "assets/photos/young/20.jpg", caption: "Chairing the younglings' council" },
-          { src: "assets/photos/young/31.jpg", caption: "Harbor-side briefing with a Padawan" },
-          { src: "assets/photos/young/07.jpg", caption: "The clan, assembled" },
-          { src: "assets/photos/young/08.jpg", caption: "Off duty at the rebel base" },
-          { src: "assets/photos/young/09.jpg", caption: "Young captain, surveying the Outer Rim" },
-          { src: "assets/photos/young/10.jpg", caption: "Long-range communications, early tech" },
-          { src: "assets/photos/young/14.jpg", caption: "Gala training: black-tie protocol" },
-          { src: "assets/photos/young/15.jpg", caption: "Graduation day with Mom", tall: true },
           { src: "assets/photos/young/29.jpg", caption: "His actual life plan, recovered. “Beautiful, intelligent, sweet wife” — ✓", tall: true }
         ]
       }

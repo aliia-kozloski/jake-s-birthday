@@ -462,6 +462,14 @@
         <div class="gallery">${(b.photos || []).map(photoFig).join('')}</div>
       </div>`,
 
+    albums: (b) => `
+      <div class="blk blk--albums" data-albums>
+        ${b.title ? `<h3 class="blk__title">${esc(b.title)}</h3>` : ''}
+        ${b.note ? `<p class="blk__note">${esc(b.note)}</p>` : ''}
+        <div class="albums__grid">${(b.albums || []).map(albumCard).join('')}</div>
+        <div class="albums__view" hidden></div>
+      </div>`,
+
     hologram: (b) => `
       <div class="blk">
         <div class="holo">
@@ -668,6 +676,55 @@
       </article>`;
   }
 
+  function albumCard(a, ai) {
+    const n = (a.photos || []).length;
+    const cover = a.cover || ((a.photos || [])[0] || {}).src || '';
+    return `
+      <button type="button" class="album" data-album="${ai}" style="animation-delay:${ai * 70}ms"
+              aria-label="Open album: ${esc(a.title)} (${n} photos)">
+        <span class="album__stack" aria-hidden="true"></span>
+        <span class="album__cover">
+          <img src="${esc(cover)}" alt="${esc(a.title)}" loading="lazy">
+          <span class="album__count">${n} ${n === 1 ? 'holo' : 'holos'}</span>
+        </span>
+        <span class="album__meta">
+          <strong>${esc(a.title)}</strong>
+          ${a.subtitle ? `<em>${esc(a.subtitle)}</em>` : ''}
+        </span>
+      </button>`;
+  }
+
+  function initAlbums(root, block) {
+    const grid = $('.albums__grid', root);
+    const view = $('.albums__view', root);
+    const note = $('.blk__note', root);
+
+    grid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.album');
+      if (!btn) return;
+      const a = (block.albums || [])[Number(btn.dataset.album)];
+      if (!a) return;
+      view.innerHTML = `
+        <button type="button" class="btn btn--ghost albums__back">◂ All albums</button>
+        <h4 class="albums__heading">${esc(a.title)}</h4>
+        ${a.subtitle ? `<p class="blk__note">${esc(a.subtitle)}</p>` : ''}
+        <div class="gallery">${(a.photos || []).map(photoFig).join('')}</div>`;
+      attachImgFallbacks(view);
+      view.hidden = false;
+      grid.hidden = true;
+      if (note) note.hidden = true;
+      $('.albums__back', view).addEventListener('click', () => {
+        view.hidden = true;
+        view.innerHTML = '';
+        grid.hidden = false;
+        if (note) note.hidden = false;
+        btn.scrollIntoView({ block: 'center' });
+      });
+      const body = root.closest('.modal__body');
+      if (body) body.scrollTop = 0; // keep the back button in view
+    });
+  }
+
   function photoFig(p) {
     if (p && p.src) {
       return `
@@ -783,6 +840,12 @@
     const fleetBlocks = (day.blocks || []).filter((b) => b.type === 'fleet');
     $$('[data-fleet]', body).forEach((el, fi) => {
       if (fleetBlocks[fi]) initFleet(el, fleetBlocks[fi]);
+    });
+
+    // albums (match nth [data-albums] element to nth albums block)
+    const albumBlocks = (day.blocks || []).filter((b) => b.type === 'albums');
+    $$('[data-albums]', body).forEach((el, ai) => {
+      if (albumBlocks[ai]) initAlbums(el, albumBlocks[ai]);
     });
   }
 
