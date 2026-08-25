@@ -453,6 +453,46 @@ const DAYS = [
             ]
           },
           {
+            title: "The Hoth Expedition",
+            subtitle: "Snow detail",
+            cover: "assets/photos/ski/02.jpg",
+            photos: [
+              { src: "assets/photos/ski/01.jpg", caption: "Helmet check before the run", tall: true },
+              { src: "assets/photos/ski/02.jpg", caption: "Chairlift ascent, Hoth sector" },
+              { src: "assets/photos/ski/03.jpg", caption: "With Dad, surveying the ice planet" }
+            ]
+          },
+          {
+            title: "The Promotion",
+            subtitle: "Certificate secured",
+            cover: "assets/photos/misc/grad-portrait.jpg",
+            photos: [
+              { src: "assets/photos/misc/grad-portrait.jpg", caption: "Official portrait with the Certificate of Promotion", tall: true },
+              { src: "assets/photos/june/09.jpg", caption: "Marching on the ceremony" },
+              { src: "assets/photos/june/08.jpg", caption: "The class assembles" },
+              { src: "assets/photos/june/10.jpg", caption: "Certificate secured" },
+              { src: "assets/photos/june/11.jpg", caption: "Grandparents, duly impressed" },
+              { src: "assets/photos/june/07.jpg", caption: "Debrief with Dad afterwards", tall: true }
+            ]
+          },
+          {
+            title: "Assorted Intel",
+            subtitle: "Everything else the archives kept",
+            cover: "assets/photos/june/15.jpg",
+            photos: [
+              { src: "assets/photos/june/15.jpg", caption: "Violin training — the Force has many disciplines" },
+              { src: "assets/photos/june/01.jpg", caption: "Cake reconnaissance at the kitchen table" },
+              { src: "assets/photos/june/03.jpg", caption: "Board game strategy session" },
+              { src: "assets/photos/june/02.jpg", caption: "New arrivals in the hangar" },
+              { src: "assets/photos/june/04.jpg", caption: "Convoy formation: bikes and wagons" },
+              { src: "assets/photos/june/06.jpg", caption: "Full crew, wheels ready" },
+              { src: "assets/photos/june/05.jpg", caption: "Dad and the little squadron" },
+              { src: "assets/photos/june/14.jpg", caption: "Kitchen patrol with a small shadow" },
+              { src: "assets/photos/june/12.jpg", caption: "Couch duty with Stella" },
+              { src: "assets/photos/june/13.jpg", caption: "Long-haul transport, strapped in" }
+            ]
+          },
+          {
             title: "Sweet Sixteen",
             subtitle: "The 2010 archives",
             cover: "assets/photos/y2010/07.jpg",
@@ -486,9 +526,8 @@ const DAYS = [
       },
       {
         type: "gallery",
-        title: "Recovered Documents",
+        title: "Recovered Document",
         photos: [
-          { src: "assets/photos/misc/grad-portrait.jpg", caption: "Official portrait with Certificate of Promotion — the archives kept a copy.", tall: true },
           { src: "assets/photos/young/29.jpg", caption: "His actual life plan, recovered. “Beautiful, intelligent, sweet wife” — ✓", tall: true }
         ]
       }
