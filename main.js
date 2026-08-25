@@ -141,6 +141,14 @@
         <path d="M56 30L49 6M64 30l7-24"/>
         <path d="M54 36L12 56l8 14 34-10zM66 36l42 20-8 14-34-10z"/>
         <path d="M50 64v10M70 64v10" opacity=".6"/>`)
+    },
+    sailbarge: { // Khetanna — Jabba's sail barge
+      cockpit: { x: 60, y: 40, r: 11 },
+      art: SHIP_WRAP(`
+        <path d="M12 60h96l-10 16H24z"/>
+        <path d="M40 16L28 56h24zM80 22L70 56h20z"/>
+        <path d="M40 16v40M80 22v34" opacity=".5"/>
+        <circle cx="36" cy="68" r="2"/><circle cx="60" cy="68" r="2"/><circle cx="84" cy="68" r="2"/>`)
     }
   };
 

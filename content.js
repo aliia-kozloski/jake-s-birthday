@@ -415,7 +415,7 @@ const DAYS = [
         /* ============================================================
            [EDIT ME] One entry per relative/friend. For each ship:
            - name / callsign : who they are (callsign is optional fun)
-           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter
+           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter | sailbarge
                      (the site draws it — no artwork needed)
            - color : that ship's glow color
            - photo : OPTIONAL — their face photo; shown as a big round
@@ -538,6 +538,22 @@ const DAYS = [
               { src: "assets/photos/fleet/roman-full.jpg", caption: "General Skywalker, leading the Open Circle Armada", tall: true }
             ],
             signoff: "— Anakin Skywalker"
+          },
+          {
+            name: "Anna",
+            callsign: "Salacious Crumb",
+            ship: "sailbarge", // Jabba's sail barge — Mr. Crumb's ride
+            color: "#9fd65a",
+            photo: "assets/photos/fleet/anna.jpg",
+            message: [
+              "Happy birthday, Jake!",
+              "I don't know a lot about Star Wars, but I liked the way Mr. Salacious Crumb looked.",
+              "Enjoy your day and eat some cake… maybe even cackle a little bit."
+            ],
+            photos: [
+              { src: "assets/photos/fleet/anna-full.jpg", caption: "Mr. Salacious Crumb (Anna), mid-snack at Jabba's court", tall: true }
+            ],
+            signoff: "— Anna"
           }
         ]
       },
