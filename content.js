@@ -12,7 +12,7 @@
    - See exactly what Jake sees on a day:     index.html?date=2026-08-26
    - Skip the opening crawl while testing:    index.html?nointro=1
      (you can combine them: index.html?preview=1&nointro=1)
-   - Share ONE day with family (e.g. the fleet): index.html?peek=6
+   - Share ONE day with family (e.g. the fleet): index.html?peek=7
      Only that day is unlocked — everything else stays locked for them,
      no matter the date. It opens automatically when they arrive.
    ========================================================================== */
@@ -560,21 +560,76 @@ const DAYS = [
     ]
   },
 
-  /* ---------- DAY 6 · AUG 29 ------------------------------------------- */
+  /* ---------- DAY 6 · AUG 29 · BIRTHDAY EVE ----------------------------- */
   {
     date: "2026-08-29",
     episode: "VI",
-    title: "The Fleet Arrives",
-    teaser: "Ships incoming…",
-    tagline: "Transmissions from across the galaxy.",
+    title: "Return of the Coupons",
+    teaser: "Cargo arriving…",
+    tagline: "Redeemable across the galaxy. No expiration.",
     saber: "#3bff6f",
-    icon: "fleet",
+    icon: "ticket",
     blocks: [
+      {
+        type: "text",
+        title: "Birthday Eve",
+        paragraphs: [
+          "One sleep to go. To keep you occupied, the Alliance has issued the following vouchers. All are legally binding in this household."
+        ]
+      },
+      {
+        type: "coupons",
+        title: "Birthday Spoils: The Coupon Book",
+        note: "Valid forever. No expiration date in this galaxy — screenshot to redeem.",
+        coupons: [
+          { title: "One breakfast in bed", detail: "Blue milk optional." },
+          { title: "Movie night — your pick", detail: "Yes, even a full Star Wars marathon. Yes, even the prequels." },
+          { title: "One 20-minute massage", detail: "Guaranteed to restore balance to the Force." },
+          { title: "A day free of chores", detail: "The droids (me) will handle everything." },
+          { title: "One day of whatever Jake wants", detail: "UNLIMITED POWER — for 24 hours, your wish is the law of the galaxy." },
+          { title: "One wish — anything*", detail: "*Within reason. And within this star system." }
+        ]
+      },
+      {
+        type: "countdown",
+        title: "T-minus to your birthday",
+        target: "2026-08-30T00:00:00",
+        doneText: "IT'S TIME — HAPPY BIRTHDAY, JAKE!"
+      }
+    ]
+  },
+
+  /* ---------- DAY 7 · AUG 30 · THE BIRTHDAY ----------------------------- */
+  {
+    date: "2026-08-30",
+    episode: "VII",
+    title: "The Rise of Jake",
+    teaser: "The big one…",
+    tagline: "HAPPY BIRTHDAY!",
+    saber: "#ffcf4d",
+    icon: "cake",
+    blocks: [
+      {
+        type: "finale",
+        headline: ["HAPPY", "BIRTHDAY,", "JAKE!"],
+        subline: "LEVEL UP: ANOTHER YEAR OF JEDI MASTERY", // [EDIT ME] e.g. "LEVEL 35 UNLOCKED"
+        message: [
+          "[EDIT ME — your big birthday message goes here. This is the one he reads on the day itself.]",
+          "This week was just the trailer — the best is yet to come. I love you. Happy birthday, my Jedi."
+        ],
+        wishes: [
+          "May your year be free of Sith Lords and slow Wi-Fi.",
+          "May your coffee be strong and your weekends long.",
+          "May every traffic light you meet glow Jedi green.",
+          "May the snacks always be within arm's reach.",
+          "And above all — may the Force be with you. Always."
+        ]
+      },
       {
         type: "text",
         title: "Long-Range Sensors",
         paragraphs: [
-          "Sensors are picking up ships dropping out of hyperspace all over the system. It's not an attack — it's your people. The whole galaxy is gathering for tomorrow.",
+          "Sensors are picking up ships dropping out of hyperspace all over the system. It's not an attack — it's your people. The whole galaxy has gathered for today.",
           "Each ship carries a transmission recorded just for you."
         ]
       },
@@ -744,41 +799,6 @@ const DAYS = [
         ]
       },
       {
-        type: "countdown",
-        title: "T-minus to your birthday",
-        target: "2026-08-30T00:00:00",
-        doneText: "IT'S TIME — HAPPY BIRTHDAY, JAKE!"
-      }
-    ]
-  },
-
-  /* ---------- DAY 7 · AUG 30 · THE BIRTHDAY ----------------------------- */
-  {
-    date: "2026-08-30",
-    episode: "VII",
-    title: "The Rise of Jake",
-    teaser: "The big one…",
-    tagline: "HAPPY BIRTHDAY!",
-    saber: "#ffcf4d",
-    icon: "cake",
-    blocks: [
-      {
-        type: "finale",
-        headline: ["HAPPY", "BIRTHDAY,", "JAKE!"],
-        subline: "LEVEL UP: ANOTHER YEAR OF JEDI MASTERY", // [EDIT ME] e.g. "LEVEL 35 UNLOCKED"
-        message: [
-          "[EDIT ME — your big birthday message goes here. This is the one he reads on the day itself.]",
-          "This week was just the trailer — the best is yet to come. I love you. Happy birthday, my Jedi."
-        ],
-        wishes: [
-          "May your year be free of Sith Lords and slow Wi-Fi.",
-          "May your coffee be strong and your weekends long.",
-          "May every traffic light you meet glow Jedi green.",
-          "May the snacks always be within arm's reach.",
-          "And above all — may the Force be with you. Always."
-        ]
-      },
-      {
         type: "hologram",
         from: "Aliia",
         title: "A message from your favorite rebel",
@@ -795,19 +815,6 @@ const DAYS = [
       //   title: "A holomessage from Aliia",
       //   src: "assets/photos/aliia-message.mp4"   // or a YouTube/Vimeo link
       // },
-      {
-        type: "coupons",
-        title: "Birthday Spoils: The Coupon Book",
-        note: "Valid forever. No expiration date in this galaxy — screenshot to redeem.",
-        coupons: [
-          { title: "One breakfast in bed", detail: "Blue milk optional." },
-          { title: "Movie night — your pick", detail: "Yes, even a full Star Wars marathon. Yes, even the prequels." },
-          { title: "One 20-minute massage", detail: "Guaranteed to restore balance to the Force." },
-          { title: "A day free of chores", detail: "The droids (me) will handle everything." },
-          { title: "One day of whatever Jake wants", detail: "UNLIMITED POWER — for 24 hours, your wish is the law of the galaxy." },
-          { title: "One wish — anything*", detail: "*Within reason. And within this star system." }
-        ]
-      },
       {
         type: "text",
         paragraphs: [

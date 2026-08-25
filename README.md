@@ -25,8 +25,8 @@ python3 -m http.server 8000
 | Aug 26 | III     | The Jedi Trials            | Interactive trivia quiz with ranks     |
 | Aug 27 | IV      | HoloNet News               | Fake press day: magazine covers & articles about Jake |
 | Aug 28 | V       | The Baby Strikes Back      | Childhood photo albums (click a cover to open a set) |
-| Aug 29 | VI      | The Fleet Arrives          | Relatives' ships with personal messages + countdown to midnight |
-| Aug 30 | VII     | The Rise of Jake           | HAPPY BIRTHDAY finale: fireworks, love letter + coupon book |
+| Aug 29 | VI      | Return of the Coupons      | Coupon book + countdown to midnight    |
+| Aug 30 | VII     | The Rise of Jake           | HAPPY BIRTHDAY finale with fireworks, the relatives' fleet + love letter |
 
 ## Editing the content
 
@@ -48,7 +48,7 @@ Doors unlock by the viewer's local date, but you can test everything early:
 | `index.html?date=2026-08-27` | Pretends today is that date                   |
 | `index.html?nointro=1`       | Skips the opening crawl                       |
 | `index.html?preview=1&open=4` | Jumps straight into a given day's door       |
-| `index.html?peek=6`          | Family share link: ONLY that day (1–7) is unlocked — it opens on arrival, and every other day stays locked no matter the date |
+| `index.html?peek=7`          | Family share link: ONLY that day (1–7) is unlocked — it opens on arrival, and every other day stays locked no matter the date. The fleet is day 7 |
 
 They combine: `index.html?preview=1&nointro=1`. The opening crawl plays once
 per browser session; there's a "Replay opening crawl" button in the footer.
