@@ -385,6 +385,26 @@ const DAYS = [
             ]
           },
           {
+            title: "The Seventh Birthday",
+            subtitle: "Bowling, cake, chaos",
+            cover: "assets/photos/bday7/11.jpg",
+            photos: [
+              { src: "assets/photos/bday7/12.jpg", caption: "Birthday morning at home base", tall: true },
+              { src: "assets/photos/bday7/13.jpg", caption: "Recon walk with Dad and the co-pilot" },
+              { src: "assets/photos/bday7/04.jpg", caption: "Squadron assembled at the lanes" },
+              { src: "assets/photos/bday7/01.jpg", caption: "Mission control, also known as the scoring screen" },
+              { src: "assets/photos/bday7/02.jpg", caption: "Ball selection: a serious business", tall: true },
+              { src: "assets/photos/bday7/07.jpg", caption: "Strike run in progress" },
+              { src: "assets/photos/bday7/08.jpg", caption: "Weighing the options" },
+              { src: "assets/photos/bday7/05.jpg", caption: "The crowd holds its breath" },
+              { src: "assets/photos/bday7/06.jpg", caption: "Jake, mid-victory-report" },
+              { src: "assets/photos/bday7/03.jpg", caption: "The Elder Council attends" },
+              { src: "assets/photos/bday7/09.jpg", caption: "Cake incoming" },
+              { src: "assets/photos/bday7/10.jpg", caption: "Two cakes. Correct protocol." },
+              { src: "assets/photos/bday7/11.jpg", caption: "Seven candles, one breath" }
+            ]
+          },
+          {
             title: "The Elders",
             subtitle: "Family & the original Council",
             cover: "assets/photos/young/23.jpg",
@@ -397,8 +417,8 @@ const DAYS = [
             ]
           },
           {
-            title: "Thanksgiving with Stella",
-            subtitle: "Jake & the newest recruit",
+            title: "Jake & Stella",
+            subtitle: "Big brother duty",
             cover: "assets/photos/thanksgiving/07.jpg",
             photos: [
               { src: "assets/photos/thanksgiving/07.jpg", caption: "First mate Stella, freshly recruited" },
@@ -409,7 +429,9 @@ const DAYS = [
               { src: "assets/photos/thanksgiving/05.jpg", caption: "Golden hour at the homestead" },
               { src: "assets/photos/thanksgiving/06.jpg", caption: "The smile that runs the galaxy" },
               { src: "assets/photos/thanksgiving/03.jpg", caption: "The famous red flannel", tall: true },
-              { src: "assets/photos/thanksgiving/09.jpg", caption: "The same holo, after unauthorized modification. Suspect: age 8, armed with MS Paint.", tall: true }
+              { src: "assets/photos/thanksgiving/09.jpg", caption: "The same holo, after unauthorized modification. Suspect: age 8, armed with MS Paint.", tall: true },
+              { src: "assets/photos/misc/bowling-stella-1.jpg", caption: "Years later: teaching the first mate to bowl", tall: true },
+              { src: "assets/photos/misc/bowling-stella-2.jpg", caption: "Ball return duty, closely supervised", tall: true }
             ]
           },
           {
@@ -450,8 +472,9 @@ const DAYS = [
       },
       {
         type: "gallery",
-        title: "Recovered Document",
+        title: "Recovered Documents",
         photos: [
+          { src: "assets/photos/misc/grad-portrait.jpg", caption: "Official portrait with Certificate of Promotion — the archives kept a copy.", tall: true },
           { src: "assets/photos/young/29.jpg", caption: "His actual life plan, recovered. “Beautiful, intelligent, sweet wife” — ✓", tall: true }
         ]
       }
