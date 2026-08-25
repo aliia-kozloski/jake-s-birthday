@@ -428,6 +428,23 @@ const DAYS = [
               { src: "assets/photos/young/10.jpg", caption: "Long-range communications, early tech" },
               { src: "assets/photos/young/14.jpg", caption: "Gala training: black-tie protocol" }
             ]
+          },
+          {
+            title: "Sweet Sixteen",
+            subtitle: "The 2010 archives",
+            cover: "assets/photos/y2010/07.jpg",
+            photos: [
+              { src: "assets/photos/y2010/01.jpg", caption: "Cake secured, moving at lightspeed", tall: true },
+              { src: "assets/photos/y2010/02.jpg", caption: "The ceremonial cutting, Dad supervising", tall: true },
+              { src: "assets/photos/y2010/05.jpg", caption: "A second cake appears, candles armed" },
+              { src: "assets/photos/y2010/03.jpg", caption: "Small rebel, armed with a net" },
+              { src: "assets/photos/y2010/04.jpg", caption: "Costume protocol, strictly enforced", tall: true },
+              { src: "assets/photos/y2010/06.jpg", caption: "The younglings have opinions" },
+              { src: "assets/photos/y2010/10.jpg", caption: "Hugs, dispensed generously" },
+              { src: "assets/photos/y2010/07.jpg", caption: "Sixteen and dangerous" },
+              { src: "assets/photos/y2010/08.jpg", caption: "Double thumbs: mission accomplished" },
+              { src: "assets/photos/y2010/09.jpg", caption: "The classic Jake face, 2010 edition" }
+            ]
           }
         ]
       },
