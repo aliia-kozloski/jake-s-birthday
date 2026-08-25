@@ -448,7 +448,8 @@ const DAYS = [
               { src: "assets/photos/young/08.jpg", caption: "Off duty at the rebel base" },
               { src: "assets/photos/young/09.jpg", caption: "Young captain, surveying the Outer Rim" },
               { src: "assets/photos/young/10.jpg", caption: "Long-range communications, early tech" },
-              { src: "assets/photos/young/14.jpg", caption: "Gala training: black-tie protocol" }
+              { src: "assets/photos/young/14.jpg", caption: "Gala training: black-tie protocol" },
+              { src: "assets/photos/misc/chinatown-clan.jpg", caption: "The clan on the town", tall: true }
             ]
           },
           {
@@ -466,6 +467,19 @@ const DAYS = [
               { src: "assets/photos/y2010/07.jpg", caption: "Sixteen and dangerous" },
               { src: "assets/photos/y2010/08.jpg", caption: "Double thumbs: mission accomplished" },
               { src: "assets/photos/y2010/09.jpg", caption: "The classic Jake face, 2010 edition" }
+            ]
+          },
+          {
+            title: "The Graduation",
+            subtitle: "Class of 2012",
+            cover: "assets/photos/grad/06.jpg",
+            photos: [
+              { src: "assets/photos/grad/06.jpg", caption: "The official senior portrait", tall: true },
+              { src: "assets/photos/grad/02.jpg", caption: "Blue robes, class of 2012" },
+              { src: "assets/photos/grad/04.jpg", caption: "With Dad — mission accomplished" },
+              { src: "assets/photos/grad/03.jpg", caption: "The Elder Council, still in attendance" },
+              { src: "assets/photos/grad/07.jpg", caption: "A selfie from the big day", tall: true },
+              { src: "assets/photos/grad/05.jpg", caption: "Next mission: orientation day, badge and all", tall: true }
             ]
           }
         ]
