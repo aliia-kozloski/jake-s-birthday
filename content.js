@@ -397,6 +397,22 @@ const DAYS = [
             ]
           },
           {
+            title: "Thanksgiving with Stella",
+            subtitle: "Jake & the newest recruit",
+            cover: "assets/photos/thanksgiving/07.jpg",
+            photos: [
+              { src: "assets/photos/thanksgiving/07.jpg", caption: "First mate Stella, freshly recruited" },
+              { src: "assets/photos/thanksgiving/08.jpg", caption: "Briefing the new crew member" },
+              { src: "assets/photos/thanksgiving/04.jpg", caption: "Mom, Jake and the newest addition to the fleet" },
+              { src: "assets/photos/thanksgiving/01.jpg", caption: "Touchdown for Thanksgiving", tall: true },
+              { src: "assets/photos/thanksgiving/02.jpg", caption: "Mission face" },
+              { src: "assets/photos/thanksgiving/05.jpg", caption: "Golden hour at the homestead" },
+              { src: "assets/photos/thanksgiving/06.jpg", caption: "The smile that runs the galaxy" },
+              { src: "assets/photos/thanksgiving/03.jpg", caption: "The famous red flannel", tall: true },
+              { src: "assets/photos/thanksgiving/09.jpg", caption: "The same holo, after unauthorized modification. Suspect: age 8, armed with MS Paint.", tall: true }
+            ]
+          },
+          {
             title: "The Squadron",
             subtitle: "The clan, assembled",
             cover: "assets/photos/young/07.jpg",
