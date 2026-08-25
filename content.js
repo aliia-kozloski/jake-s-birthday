@@ -489,7 +489,11 @@ const DAYS = [
               { src: "assets/photos/june/05.jpg", caption: "Dad and the little squadron" },
               { src: "assets/photos/june/14.jpg", caption: "Kitchen patrol with a small shadow" },
               { src: "assets/photos/june/12.jpg", caption: "Couch duty with Stella" },
-              { src: "assets/photos/june/13.jpg", caption: "Long-haul transport, strapped in" }
+              { src: "assets/photos/june/13.jpg", caption: "Long-haul transport, strapped in" },
+              { src: "assets/photos/misc/breakfast-dad.jpg", caption: "Breakfast briefing with Dad" },
+              { src: "assets/photos/misc/trackside-dad.jpg", caption: "Trackside with Dad, blanket provisions secured", tall: true },
+              { src: "assets/photos/misc/beach-mom.jpg", caption: "Beach detail with Mom" },
+              { src: "assets/photos/misc/suited-dad.jpg", caption: "Suited up with Dad, decades later", tall: true }
             ]
           },
           {
