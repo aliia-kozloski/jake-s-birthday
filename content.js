@@ -814,8 +814,9 @@ const DAYS = [
         title: "A message from your favorite rebel",
         paragraphs: [
           "Jake — if you're reading this, the transmission worked and the Empire didn't intercept it.",
-          "[EDIT ME — write your letter here. Ideas: your favorite memory together, the moment you knew, the thing you love most about him. Add as many paragraphs as you like — each one goes in quotes, separated by commas.]",
-          "Happy birthday. I love you more than all the stars this website can render — and I checked, it renders a lot."
+          "You are the most hardworking, ambitious, and fair CEO. The most supportive, generous, and loving husband. And the most handsome, reliable person I know.",
+          "I can't put into words how much I love you and how grateful I am for everything you do. I know how hard you work for our family, and I just want you to know that I always see it, notice it, and appreciate it.",
+          "Cheers to another wonderful year together. I love you"
         ],
         signoff: "Yours across the galaxy, — Aliia"
       },
