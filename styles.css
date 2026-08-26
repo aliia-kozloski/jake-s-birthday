@@ -717,6 +717,7 @@ img { max-width: 100%; display: block; }
 
 .holo p {
   color: #c6e9fc;
+  white-space: pre-line; /* newlines in content.js become line breaks (for poems) */
   font-size: 19px;
   line-height: 1.7;
   margin-bottom: 13px;

@@ -640,7 +640,7 @@ const DAYS = [
         /* ============================================================
            [EDIT ME] One entry per relative/friend. For each ship:
            - name / callsign : who they are (callsign is optional fun)
-           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter | sailbarge | tantive
+           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter | sailbarge | tantive | tsix
                      (the site draws it — no artwork needed)
            - color : that ship's glow color
            - photo : OPTIONAL — their face photo; shown as a big round
@@ -724,11 +724,21 @@ const DAYS = [
           },
           {
             name: "Sarah",
-            callsign: "Phantom Five",
-            ship: "awing",
-            color: "#b98cff",
-            message: ["[EDIT ME — Sarah's message.]"],
-            signoff: "— Sarah"
+            callsign: "Fulcrum",
+            ship: "tsix", // Ahsoka's T-6 Jedi shuttle
+            color: "#f0ece1",
+            photo: "assets/photos/fleet/sarah.jpg",
+            message: [
+              "Thirty-two years! Thirty-two years you have been\nZooming around on this planet!\nBringing added sunshine to the galaxy.\nSun so bright!!\nBringing joy to your mother's heart.\nNow you bring joy to your wife's heart too, and her brother's heart too,\nAnd through Keeper joy to strangers even.",
+              "Here is a maternal blessing\nTo carry in space\nFor your next year in this galaxy:",
+              "May all your wonderfulness bounce back to you.\nMay all the rays of love you have sent to so many\nCome back to warm you.\nMay you have a year of joy, of discovery,\nof dreams and laughter with your wife.",
+              "Next week, when you are under water looking at marvels,\nthe faces of the Pacific fish,\nKnow they are saying, “Your mama loves you!”\nAs well she should.",
+              "You are wonderful."
+            ],
+            photos: [
+              { src: "assets/photos/fleet/sarah-full.jpg", caption: "Fulcrum, watching over the whole galaxy" }
+            ],
+            signoff: "— Mom"
           },
           {
             name: "Stella",

@@ -150,6 +150,14 @@
         <path d="M40 16v40M80 22v34" opacity=".5"/>
         <circle cx="36" cy="68" r="2"/><circle cx="60" cy="68" r="2"/><circle cx="84" cy="68" r="2"/>`)
     },
+    tsix: { // T-6 — Ahsoka's Jedi shuttle
+      cockpit: { x: 60, y: 30, r: 12 },
+      art: SHIP_WRAP(`
+        <path d="M60 6l14 26v36H46V32z"/>
+        <path d="M46 36L9 58l7 14 30-14zM74 36l37 22-7 14-30-14z"/>
+        <path d="M52 68v8M68 68v8" opacity=".6"/>
+        <path d="M40 46h-6M80 46h6" opacity=".35"/>`)
+    },
     tantive: { // Tantive IV — Leia's blockade runner
       cockpit: { x: 60, y: 40, r: 11 },
       art: SHIP_WRAP(`
@@ -640,8 +648,7 @@
         grid.hidden = false;
         if (note) note.hidden = false;
       });
-      const body = root.closest('.modal__body');
-      if (body) body.scrollTop = 0;
+      root.scrollIntoView({ block: 'start' }); // keep the heading and back button in view
     });
   }
 
@@ -720,8 +727,7 @@
         if (note) note.hidden = false;
         btn.scrollIntoView({ block: 'center' });
       });
-      const body = root.closest('.modal__body');
-      if (body) body.scrollTop = 0; // keep the back button in view
+      root.scrollIntoView({ block: 'start' }); // keep the heading and back button in view
     });
   }
 
