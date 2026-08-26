@@ -667,7 +667,7 @@ const DAYS = [
             photo: "assets/photos/fleet/rael.jpg",
             // video: "assets/photos/fleet/rael.mp4",   (or a YouTube link)
             message: [
-              "[EDIT ME — Rael's birthday message goes here. Each paragraph in its own quotes, separated by commas.]"
+              "Happy birthday, bro! Thanks for everything you do for me. Without you, our family wouldn't be this lux."
             ],
             photos: [
               { src: "assets/photos/fleet/rael-full.jpg", caption: "Red Leader, standing by", tall: true }
