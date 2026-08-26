@@ -681,7 +681,8 @@ const DAYS = [
             color: "#cfe9ff",
             photo: "assets/photos/fleet/aliia.jpg",
             message: [
-              "[EDIT ME — your own message to Jake, delivered with the fleet.]"
+              "I hope you'll forever remain my stupid ass. I hope you'll always come hug me when I wake up, get me coffee, and give me foot massages, because those little moments are so precious to me. And I hope I'll always be a wife you can be proud of.",
+              "I love you so much. Happy birthday! ❤️ And please don't get old too fast."
             ],
             photos: [
               { src: "assets/photos/fleet/aliia-full.jpg", caption: "Princess Aliia of Alderaan", tall: true }
