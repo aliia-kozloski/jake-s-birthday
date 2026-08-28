@@ -150,6 +150,16 @@
         <path d="M40 16v40M80 22v34" opacity=".5"/>
         <circle cx="36" cy="68" r="2"/><circle cx="60" cy="68" r="2"/><circle cx="84" cy="68" r="2"/>`)
     },
+    kazoo: { // the Kazoo 2000 — ninja spy craft (yes, shaped like a kazoo)
+      cockpit: { x: 60, y: 22, r: 9 },
+      art: SHIP_WRAP(`
+        <path d="M52 10h16l7 60H45z"/>
+        <circle cx="60" cy="36" r="8.5"/>
+        <path d="M60 27.5V20" opacity=".7"/>
+        <path d="M45 46L7 72l19 5 19-14zM75 46l38 26-19 5-19-14z"/>
+        <path d="M52 70v8M68 70v8" opacity=".6"/>
+        <path d="M54 18h12" opacity=".4"/>`)
+    },
     tsix: { // T-6 — Ahsoka's Jedi shuttle
       cockpit: { x: 60, y: 30, r: 12 },
       art: SHIP_WRAP(`
@@ -586,6 +596,7 @@
         <span class="ship__plate">
           <strong>${esc(s.name)}</strong>
           ${s.callsign ? `<em>${esc(s.callsign)}</em>` : ''}
+          ${s.craft ? `<span class="ship__craft">${esc(s.craft)}</span>` : ''}
         </span>
       </button>`;
   }

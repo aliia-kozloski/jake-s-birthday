@@ -640,7 +640,7 @@ const DAYS = [
         /* ============================================================
            [EDIT ME] One entry per relative/friend. For each ship:
            - name / callsign : who they are (callsign is optional fun)
-           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter | sailbarge | tantive | tsix
+           - ship  : xwing | awing | ywing | falcon | shuttle | cruiser | jedifighter | sailbarge | tantive | tsix | kazoo
                      (the site draws it — no artwork needed)
            - color : that ship's glow color
            - photo : OPTIONAL — their face photo; shown as a big round
@@ -806,6 +806,21 @@ const DAYS = [
               { src: "assets/photos/fleet/izzy-full.jpg", caption: "Padawan Izzy, at the first Jedi Temple on Ahch-To", tall: true }
             ],
             signoff: "— Izzy, the Skywalker sister"
+          },
+          {
+            name: "Jessie",
+            callsign: "Rogue Researcher",
+            craft: "Kazoo 2000",
+            ship: "kazoo", // her ninja spy craft
+            color: "#57e0c8",
+            photo: "assets/photos/fleet/jessie.jpg",
+            message: [
+              "Happiest of birthdays, Jake! It was really good to see you this summer. May the Force be with you in all your adventures!"
+            ],
+            photos: [
+              { src: "assets/photos/fleet/jessie-full.jpg", caption: "Rogue researcher, at the helm of the Kazoo 2000", tall: true }
+            ],
+            signoff: "— Jessie"
           }
         ]
       },
