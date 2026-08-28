@@ -867,6 +867,72 @@
   }
 
   /* ==========================================================================
+     PHOTO LIGHTBOX — click any gallery photo to see it full size
+     ========================================================================== */
+  const lb = $('#lightbox');
+  let lbShots = [];
+  let lbIdx = 0;
+  let lbOpen = false;
+
+  function lbRender() {
+    const shot = lbShots[lbIdx];
+    if (!shot) return;
+    const img = $('#lightboxImg');
+    img.src = shot.src;
+    img.alt = shot.caption || 'photo';
+    $('#lightboxCap').textContent = shot.caption || '';
+    const many = lbShots.length > 1;
+    $('#lightboxPrev').hidden = !many;
+    $('#lightboxNext').hidden = !many;
+  }
+
+  function openLightbox(shots, idx) {
+    if (!shots.length) return;
+    lbShots = shots;
+    lbIdx = idx;
+    lbRender();
+    lb.hidden = false;
+    lbOpen = true;
+    requestAnimationFrame(() => lb.classList.add('is-open'));
+    $('#lightboxClose').focus({ preventScroll: true });
+  }
+
+  function closeLightbox() {
+    if (!lbOpen) return;
+    lbOpen = false;
+    lb.classList.remove('is-open');
+    setTimeout(() => {
+      lb.hidden = true;
+      $('#lightboxImg').removeAttribute('src');
+    }, 260);
+  }
+
+  function lbStep(delta) {
+    if (lbShots.length < 2) return;
+    lbIdx = (lbIdx + delta + lbShots.length) % lbShots.length;
+    lbRender();
+  }
+
+  // any photo inside the day modal opens full size; its gallery becomes the reel
+  function wireLightbox() {
+    $('#modalBody').addEventListener('click', (e) => {
+      const fig = e.target.closest('.ph');
+      if (!fig || !fig.querySelector('img')) return;
+      const gallery = fig.closest('.gallery');
+      const figs = (gallery ? $$('.ph', gallery) : [fig]).filter((f) => f.querySelector('img'));
+      const shots = figs.map((f) => ({
+        src: f.querySelector('img').getAttribute('src'),
+        caption: (f.querySelector('figcaption') || {}).textContent || ''
+      }));
+      openLightbox(shots, Math.max(0, figs.indexOf(fig)));
+    });
+    $('#lightboxClose').addEventListener('click', closeLightbox);
+    $('#lightboxBackdrop').addEventListener('click', closeLightbox);
+    $('#lightboxPrev').addEventListener('click', () => lbStep(-1));
+    $('#lightboxNext').addEventListener('click', () => lbStep(1));
+  }
+
+  /* ==========================================================================
      MODAL
      ========================================================================== */
   const modal = $('#modal');
@@ -1007,6 +1073,7 @@
 
   function closeModal() {
     if (!modalOpen) return;
+    closeLightbox();
     modalOpen = false;
     fx.stop();
     modal.classList.remove('is-open');
@@ -1217,10 +1284,20 @@
       }
     });
 
+    wireLightbox();
+
     // modal close
     $('#modalClose').addEventListener('click', closeModal);
     $('#modalBackdrop').addEventListener('click', closeModal);
-    addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    addEventListener('keydown', (e) => {
+      if (lbOpen) {
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowLeft') lbStep(-1);
+        else if (e.key === 'ArrowRight') lbStep(1);
+        return; // the lightbox sits above the day modal
+      }
+      if (e.key === 'Escape') closeModal();
+    });
 
     // direct share link (?peek=N): open that day's door on arrival
     if (peekIdx !== null) setTimeout(() => openDay(peekIdx), 450);

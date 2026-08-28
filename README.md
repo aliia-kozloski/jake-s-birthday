@@ -24,7 +24,7 @@ python3 -m http.server 8000
 | Aug 25 | II      | The Phantom Date           | Surprise-date mission briefing (5pm)   |
 | Aug 26 | III     | The Jedi Trials            | Interactive trivia quiz with ranks     |
 | Aug 27 | IV      | HoloNet News               | Fake press day: magazine covers & articles about Jake |
-| Aug 28 | V       | The Baby Strikes Back      | Childhood photo albums (click a cover to open a set) |
+| Aug 28 | V       | The Baby Strikes Back      | Childhood photo albums (click a cover to open a set, click a photo to enlarge) |
 | Aug 29 | VI      | Return of the Coupons      | Coupon book + countdown to midnight    |
 | Aug 30 | VII     | The Rise of Jake           | HAPPY BIRTHDAY finale with fireworks, the relatives' fleet + love letter |
 
